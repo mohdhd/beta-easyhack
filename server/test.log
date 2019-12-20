@@ -1,0 +1,7 @@
+
+> easy-hack-ctf@1.0.0 test /home/mustafa/Projects/JS/easyhack-ctf/server
+> jest --forceExit
+
+  console.log test/users.test.ts:16
+    DB is ready
+

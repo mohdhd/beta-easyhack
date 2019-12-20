@@ -1,0 +1,8 @@
+{
+    "name": "Easy-hack API documentation",
+    "version": "1.0.0",
+    "description": "CTF platfrom API",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

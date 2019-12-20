@@ -88,8 +88,6 @@ export default {
         for(let i=1;i<this.users.length;i++){
           rank +=1;
           if(this.users[i].liveScore != score){
-
-            score = user.liveScore;
             this.users[i].rank = rank;
           }else{
             if(this.users[i].liveFlagSubmitTime < this.users[i-1].liveFlagSubmitTime){

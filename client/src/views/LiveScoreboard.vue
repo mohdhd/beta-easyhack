@@ -63,9 +63,9 @@ export default {
         this.users = resp.data.users
                     .filter((user) => user.liveScore != 0)
                     .sort((a, b) => {
-                      if(a === b){
+                      if(a.liveScore === b.liveScore){
                         return 0;
-                      }else if(a > b){
+                      }else if(a.liveScore > b.liveScore){
                         return -1;
                       }else{
                         return 1;

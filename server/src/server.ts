@@ -3,7 +3,7 @@ import app from './app';
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9000;
 const ENV = process.env.NODE_ENV || "development";
 
 dotenv.config();

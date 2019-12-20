@@ -60,7 +60,7 @@ import Timer from '../components/Timer';
 
 import axios from "axios"
 
-axios.defaults.baseURL = (process.env.NODE_ENV == "development")?"http://localhost:8000":"https://backend.easyhackctf.com"
+axios.defaults.baseURL = (process.env.NODE_ENV == "development")?"http://localhost:8000":"https://betabackend.easyhackctf.com"
 
 export default {
   name: "home",

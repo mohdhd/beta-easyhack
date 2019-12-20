@@ -33,7 +33,7 @@ import ChallengeCard from '../components/ChallengeCard';
 import axios from "axios"
 import auth from '../auth';
 
-axios.defaults.baseURL = (process.env.NODE_ENV == "development")?"http://localhost:8000":"https://backend.easyhackctf.com"
+axios.defaults.baseURL = (process.env.NODE_ENV == "development")?"http://localhost:8000":"https://betabackend.easyhackctf.com"
 
 export default {
   name: 'LiveCtf',

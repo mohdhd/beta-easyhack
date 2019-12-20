@@ -20,7 +20,7 @@ export async function mail(email: string, hash: string) {
        
         html: `
         <p>Please verify your email ${email} by clicking
-        <a href="https://backend.easyhackctf.com/api/users/confirm/${hash}">here</a>
+        <a href="https://betabackend.easyhackctf.com/api/users/confirm/${hash}">here</a>
         </p>
         `, // html body
     });
@@ -46,7 +46,7 @@ export async function recoverUserPassword(email: string, hash: string) {
         to: email, // list of receivers
         subject: "Password Recovery",
         html: `
-        <p>To reset your password, visit this  <a href="https://backend.easyhackctf.com/api/users/recover_password/${hash}">link</a> 
+        <p>To reset your password, visit this  <a href="https://betabackend.easyhackctf.com/api/users/recover_password/${hash}">link</a> 
         and then enter your new password
         </p>
         `, // html body

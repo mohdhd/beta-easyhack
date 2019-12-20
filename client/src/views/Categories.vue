@@ -34,7 +34,7 @@ export default {
   name: 'Categories',
 
   data: ()=> ({
-    categories:['Misc','Web Security','Exploitation','Reverse Engineering','Cryptography','Malware Analysis','Mobile Security','Forenscis','General Information'],
+    categories:['Misc','Web Security','Exploitation','Reverse Engineering','Cryptography','Malware Analysis','Mobile Security','Forensics','General Information'],
     
   }),
 
@@ -54,7 +54,7 @@ export default {
                 return 'fas fa-puzzle-piece'
             }else if (name == 'Mobile Security'){
                 return 'fas fa-mobile-alt'
-            }else if (name == 'Forenscis'){
+            }else if (name == 'Forensics'){
                 return 'fas fa-search';
             }else if(name == 'General Information'){
                 return 'fas fa-globe';

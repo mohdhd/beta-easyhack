@@ -94,6 +94,9 @@ import axios from 'axios';
 
 axios.defaults.baseURL = (process.env.NODE_ENV == "development")?"http://localhost:8000":"https://betabackend.easyhackctf.com"
 
+const usernameRe =/^[a-zA-Z0-9_@]+$/;
+const emailRe = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
 export default {
   name: 'login',
 
@@ -108,11 +111,13 @@ export default {
     email:"",
     usernameRules: [
       v => !!v || 'username is required',
-      v => (v && v.length >= 5 && v.length < 26) || 'username must be between 5 and 20 characters',
+      v => (v && v.length >= 5 && v.length < 26) || 'username must be between 5 and 20 characters',,
+      v => usernameRe.test(String(username.value)) || 'Enter a valid username only letters numbers 0-9 and _ are allowed'
     ],
 
     emailRules: [
       v => !!v || 'username is required',
+      v => emailRe.test(String(email.value).toLowerCase()) || 'Enter a valid Email'
     ],
 
     password: "",

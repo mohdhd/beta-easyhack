@@ -114,7 +114,7 @@ export default {
       editorOptions:{
         placeholder:'Challenge Content...'
       },
-      categories:['Misc','Web Security','Exploitation','Reverse Engineering','Cryptography','Malware Analysis','Mobile Security','Forenscis','General Information'],
+      categories:['Misc','Web Security','Exploitation','Reverse Engineering','Cryptography','Malware Analysis','Mobile Security','Forensics','General Information'],
       difficulties: ["Easy", "Medium", "Advanced"]
 
     }

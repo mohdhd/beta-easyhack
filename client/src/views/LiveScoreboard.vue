@@ -65,9 +65,9 @@ export default {
                     .sort((a, b) => {
                       if(a.liveScore === b.liveScore){
                         if(a.liveFlagSubmitTime < b.liveFlagSubmitTime){
-                          return 1;
-                        }else{
                           return -1;
+                        }else{
+                          return 1;
                         }
                       }else if(a.liveScore > b.liveScore){
                         return -1;

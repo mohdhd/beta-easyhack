@@ -17,7 +17,7 @@ import { uuid } from 'uuidv4';
 export const findAll = async (req: Request, res: Response, next: any) => {
     try {
         const users = await User.find({ username: { $ne: 'admin' } })
-            .select({ username: 1, score: 1, solvedChallenges: 1, liveScore: 1 });
+            .select({ username: 1, score: 1, solvedChallenges: 1, liveScore: 1,liveFlagSubmitTime:1,flagSubmitTime:1 });
         return res.json({ users });
     } catch (error) {
         return next(error);

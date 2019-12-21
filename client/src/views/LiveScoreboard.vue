@@ -59,12 +59,16 @@ export default {
     mounted() {
       axios.get("/api/users")
       .then(resp => {
-        console.log(resp)
+
         this.users = resp.data.users
                     .filter((user) => user.liveScore != 0)
                     .sort((a, b) => {
                       if(a.liveScore === b.liveScore){
-                        return 0;
+                        if(a.liveFlagSubmitTime < b.liveFlagSubmitTime){
+                          return -1;
+                        }else{
+                          return 1;
+                        }
                       }else if(a.liveScore > b.liveScore){
                         return -1;
                       }else{
@@ -83,23 +87,11 @@ export default {
         let score = this.users[0].liveScore;
         
         let rank = 1;
-        this.users[0].rank = 1;
         
-        for(let i=1;i<this.users.length;i++){
-          rank +=1;
-          if(this.users[i].liveScore != score){
+        for(let i=0;i<this.users.length;i++){
+
             this.users[i].rank = rank;
-          }else{
-            if(this.users[i].liveFlagSubmitTime < this.users[i-1].liveFlagSubmitTime){
-
-              this.users[i].rank  = rank - 1;
-              this.users[i-1].rank += 1;
-            }else{
-
-              this.users[i].rank = rank;
-            }
-          }
-          score = this.users[i].liveScore;
+            rank++;
       }
       }
     },

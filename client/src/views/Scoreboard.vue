@@ -56,9 +56,13 @@ export default {
         this.users = resp.data.users
                     .filter((user) => user.score != 0)
                     .sort((a, b) => {
-                      if(a === b){
-                        return 0;
-                      }else if(a > b){
+                      if(a.score === b.score){
+                        if(a.flagSubmitTime < b.flagSubmitTime){
+                          return -1;
+                        }else{
+                          return 1;
+                        }
+                      }else if(a.score > b.score){
                         return -1;
                       }else{
                         return 1;
@@ -72,27 +76,14 @@ export default {
 
     methods: {
       setRanks(){
-        let score = this.users[0].score;
-        let rank = 1;
-        this.users[0].rank = 1;
         
-        for(let i=1;i<this.users.length;i++){
-          rank +=1;
-          if(this.users[i].score != score){
+        let rank = 1;
+        
+        for(let i=0;i<this.users.length;i++){
 
             this.users[i].rank = rank;
-          }else{
-            if(this.users[i].flagSubmitTime < this.users[i-1].flagSubmitTime){
-
-              this.users[i].rank  = rank - 1;
-              this.users[i-1].rank += 1;
-            }else{
-
-              this.users[i].rank = rank;
-            }
-          }
-          score = this.users[i].score;
-        }
+            rank++;
+      }
       }
     },
 
